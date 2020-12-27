@@ -12,14 +12,10 @@
 #include <stdio.h>
 
 template <class type>
-class ColumnType {
+struct ColumnType {
     using columnType = ColumnType<type>;
     std::string name;
-    
-public:
-    ColumnType(std::string name){
-        this->name = name;
-    }
+    bool status;
     
     columnType create(type value){
         return  columnType{name, value};
@@ -36,7 +32,7 @@ class Columns {
     std::vector<Column<int>> intColumns;
     std::vector<Column<double>> doubleColumns;
     std::vector<Column<std:: string>> stringColumns;
-    
+
 public:
     template <class columnType>
     void push(Column<columnType> newColumn) {

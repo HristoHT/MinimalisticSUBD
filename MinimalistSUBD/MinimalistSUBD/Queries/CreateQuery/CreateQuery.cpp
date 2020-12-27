@@ -6,6 +6,3 @@
 //
 
 #include "CreateQuery.hpp"
-void CreateQuery::execute() {
-    
-}
